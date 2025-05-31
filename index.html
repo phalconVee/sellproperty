@@ -13,6 +13,7 @@
             height: 100%;
             display: flex;
             flex-direction: column;
+            position: relative;
         }
         .item-card:hover {
             transform: translateY(-5px);
@@ -78,6 +79,27 @@
             display: flex;
             flex-direction: column;
         }
+        .sold-out-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1;
+        }
+        .sold-out-text {
+            color: white;
+            font-size: 2rem;
+            font-weight: bold;
+            transform: rotate(-15deg);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
     </style>
 </head>
 <body>
@@ -110,7 +132,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Black Glass Dining Set (Table + 6 Chairs)</h5>
                         <p class="card-text">Perfect for hosting dinner parties or study groups. Includes table and chairs in excellent condition.</p>
-                        <p class="price-tag">$150</p>
+                        <p class="price-tag">$100</p>
                     </div>
                 </div>
             </div>
@@ -133,10 +155,13 @@
                 </div>
             </div>
 
-            <!-- Item 3: Bookshelf -->
+            <!-- Item 3: Bean Bag Chair -->
             <div class="col-md-6 col-lg-4">
                 <div class="card item-card">
-                    <div id="bookshelfCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="sold-out-overlay">
+                        <div class="sold-out-text">Sold Out</div>
+                    </div>
+                    <div id="beanBagCarousel" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
                                 <img src="images/IMG_6739.jpg" class="d-block w-100" alt="Bean Bag Chair" onclick="openImageModal(this.src)">
@@ -145,12 +170,6 @@
                                 <img src="images/IMG_6740.jpg" class="d-block w-100" alt="Bean Bag Chair" onclick="openImageModal(this.src)">
                             </div>
                         </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#bookshelfCarousel" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon"></span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#bookshelfCarousel" data-bs-slide="next">
-                            <span class="carousel-control-next-icon"></span>
-                        </button>
                     </div>
                     <div class="card-body">
                         <h5 class="card-title">Sofa Sack Bean Bag Chair (Gray)</h5>
@@ -160,10 +179,13 @@
                 </div>
             </div>
 
-            <!-- Item 4: Coffee Table -->
+            <!-- Item 4: Futon Sofa -->
             <div class="col-md-6 col-lg-4">
                 <div class="card item-card">
-                    <div id="coffeeTableCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="sold-out-overlay">
+                        <div class="sold-out-text">Sold Out</div>
+                    </div>
+                    <div id="futonCarousel" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
                                 <img src="images/IMG_6743.jpg" class="d-block w-100" alt="Sectonal Sofa" onclick="openImageModal(this.src)">
@@ -208,10 +230,13 @@
                 </div>
             </div>
 
-            <!-- Item 6: TV Stand -->
+            <!-- Item 6: Humidifier -->
             <div class="col-md-6 col-lg-4">
                 <div class="card item-card">
-                    <div id="tvStandCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="sold-out-overlay">
+                        <div class="sold-out-text">Sold Out</div>
+                    </div>
+                    <div id="humidifierCarousel" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
                                 <img src="images/IMG_6748.jpg" class="d-block w-100" alt="TV Stand" onclick="openImageModal(this.src)">
@@ -259,9 +284,12 @@
                 </div>
             </div>
 
-            <!-- Item 8: Storage Cabinet -->
+            <!-- Item 8: Webcam -->
             <div class="col-md-6 col-lg-4">
                 <div class="card item-card">
+                    <div class="sold-out-overlay">
+                        <div class="sold-out-text">Sold Out</div>
+                    </div>
                     <div id="cabinetCarousel" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
@@ -277,9 +305,13 @@
                 </div>
             </div>
 
+            <!-- Item 9: USB Microphone -->
             <div class="col-md-6 col-lg-4">
                 <div class="card item-card">
-                    <div id="lampCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="sold-out-overlay">
+                        <div class="sold-out-text">Sold Out</div>
+                    </div>
+                    <div id="microphoneCarousel" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
                                 <img src="images/IMG_6754.jpg" class="d-block w-100" alt="Study Lamp" onclick="openImageModal(this.src)">
@@ -294,8 +326,12 @@
                 </div>
             </div>
 
+            <!-- Item 10: Ring Light -->
             <div class="col-md-6 col-lg-4">
                 <div class="card item-card">
+                    <div class="sold-out-overlay">
+                        <div class="sold-out-text">Sold Out</div>
+                    </div>
                     <div id="mirrorCarousel" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
@@ -306,21 +342,23 @@
                     <div class="card-body">
                         <h5 class="card-title">LED Ring Light with Tripod</h5>
                         <p class="card-text">Compact ring light with adjustable tripod stand and brightness controls.</p>
-                        <p class="price-tag">$15</p>
+                        <p class="price-tag">$5</p>
                     </div>
                 </div>
             </div>
 
+            <!-- Item 11: Steam Iron -->
             <div class="col-md-6 col-lg-4">
                 <div class="card item-card">
+                    <div class="sold-out-overlay">
+                        <div class="sold-out-text">Sold Out</div>
+                    </div>
                     <div id="decorCarousel" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
                                 <img src="images/IMG_6758.jpg" class="d-block w-100" alt="Steam Iron" onclick="openImageModal(this.src)">
                             </div>
-                            
                         </div>
-                        
                     </div>
                     <div class="card-body">
                         <h5 class="card-title">Steam Iron</h5>
@@ -330,8 +368,12 @@
                 </div>
             </div>
 
+            <!-- Item 17: Corner Shelf -->
             <div class="col-md-6 col-lg-4">
                 <div class="card item-card">
+                    <div class="sold-out-overlay">
+                        <div class="sold-out-text">Sold Out</div>
+                    </div>
                     <div id="decorCarousel" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
@@ -349,6 +391,9 @@
 
             <div class="col-md-6 col-lg-4">
                 <div class="card item-card">
+                    <div class="sold-out-overlay">
+                        <div class="sold-out-text">Sold Out</div>
+                    </div>
                     <div id="printerCarousel" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
@@ -373,8 +418,12 @@
                 </div>
             </div>
 
+            <!-- Item 12: Travel Umbrella -->
             <div class="col-md-6 col-lg-4">
                 <div class="card item-card">
+                    <div class="sold-out-overlay">
+                        <div class="sold-out-text">Sold Out</div>
+                    </div>
                     <div id="umbrellaCarousel" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
@@ -390,8 +439,12 @@
                 </div>
             </div>
 
+            <!-- Item 14: Floor Lamp -->
             <div class="col-md-6 col-lg-4">
                 <div class="card item-card">
+                    <div class="sold-out-overlay">
+                        <div class="sold-out-text">Sold Out</div>
+                    </div>
                     <div id="floorLampCarousel" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
@@ -407,8 +460,12 @@
                 </div>
             </div>
 
+            <!-- Item 15: Wooden Desk -->
             <div class="col-md-6 col-lg-4">
                 <div class="card item-card">
+                    <div class="sold-out-overlay">
+                        <div class="sold-out-text">Sold Out</div>
+                    </div>
                     <div id="woodDeskCarousel" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
@@ -424,8 +481,12 @@
                 </div>
             </div>
 
+            <!-- Item 16: Executive Chair -->
             <div class="col-md-6 col-lg-4">
                 <div class="card item-card">
+                    <div class="sold-out-overlay">
+                        <div class="sold-out-text">Sold Out</div>
+                    </div>
                     <div id="leatherChairCarousel" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
